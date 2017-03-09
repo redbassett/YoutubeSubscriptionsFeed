@@ -1,0 +1,21 @@
+{
+  "name": "YoutubeSubscriptionsFeed",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Open Youtube to the \"Subscriptions\" tabs, instead of \"Home\" (recommendations)",
+  "homepage_url": "https://github.com/redbassett/YoutubeSubscriptionsFeed",
+  "permissions": [
+    "http://youtube.com/",
+    "https://youtube.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ]
+    }
+  ]
+}
