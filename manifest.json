@@ -15,7 +15,8 @@
       ],
       "js": [
         "inject.js"
-      ]
+      ],
+      "run_at": "document_start"
     }
   ]
 }
