@@ -15,10 +15,11 @@
 			window.location += subPath;
 		}
 		
-		// Redirect the "Home" button at the top of the feed to the actual home, bypassing the check
-		// above by using a fragment. This allows users to still access the normal home manually.
-		// The try here is to suppress errors when the button isn't on screen.
-		try {document.querySelectorAll('div#appbar-content li a')[0].href = "/#home";} catch(e) {}
+		// Redirect normal "home" ("/") links to "/#home"
+		let results = document.querySelectorAll('a[href="/"]');
+		for (var i = 0; i < results.length; i++) {
+			results[i].href = "/#home";
+		}
 		// Point the masthead logo to the subscription path
 		document.querySelector('span#yt-masthead-logo-fragment a').href = "/" + subPath;
 	}
